@@ -9,7 +9,7 @@ using movie2.Data;
 namespace movie2.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20210516191145_InitialCreate")]
+    [Migration("20210516193736_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,30 +17,6 @@ namespace movie2.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.4");
-
-            modelBuilder.Entity("movie2.Models.Actor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("IdMovie")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("Actor");
-                });
 
             modelBuilder.Entity("movie2.Models.Movie", b =>
                 {
@@ -72,13 +48,6 @@ namespace movie2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Movie");
-                });
-
-            modelBuilder.Entity("movie2.Models.Actor", b =>
-                {
-                    b.HasOne("movie2.Models.Movie", "Movie")
-                        .WithMany("Atores")
-                        .HasForeignKey("MovieId");
                 });
 #pragma warning restore 612, 618
         }

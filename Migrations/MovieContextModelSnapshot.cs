@@ -16,30 +16,6 @@ namespace movie2.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.4");
 
-            modelBuilder.Entity("movie2.Models.Actor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("IdMovie")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("Actor");
-                });
-
             modelBuilder.Entity("movie2.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
@@ -70,13 +46,6 @@ namespace movie2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Movie");
-                });
-
-            modelBuilder.Entity("movie2.Models.Actor", b =>
-                {
-                    b.HasOne("movie2.Models.Movie", "Movie")
-                        .WithMany("Atores")
-                        .HasForeignKey("MovieId");
                 });
 #pragma warning restore 612, 618
         }
