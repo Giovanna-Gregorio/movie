@@ -10,6 +10,6 @@ namespace movie2.Models
         public string Name { get; set; }
 
         public int IdMovie { get; set; }
-        public virtual Movie Movie { get; set; }
+        public Movie Movie { get; set; }
     }
 }
