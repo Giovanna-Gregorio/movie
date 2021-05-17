@@ -11,6 +11,5 @@ namespace movie2.Data
         }
 
         public DbSet<Movie> Movie { get; set; }
-        public DbSet<Actor> Actor { get; set; }
     }
 }
