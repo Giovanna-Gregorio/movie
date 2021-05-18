@@ -54,6 +54,7 @@ namespace movie2.Controllers
             }
 
             var movie = await _context.Movie
+                .Include(movie => movie.Actors)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {
