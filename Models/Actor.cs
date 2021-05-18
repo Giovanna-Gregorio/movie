@@ -11,6 +11,8 @@ namespace movie2.Models
 
         [Required, Display(Name = "Filme")]
         public int MovieId { get; set; }
+
+        [Display(Name = "Filme")]
         public Movie Movie { get; set; }
     }
 }
